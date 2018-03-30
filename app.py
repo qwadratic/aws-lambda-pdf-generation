@@ -27,6 +27,7 @@ def url2pdf():
             Bucket=BUCKET,
             Key=key,
             Body=pdf,
+            ACL='public-read',
         )
         return {
             "pdf_url": "https://{}.s3.amazonaws.com/{}".format(BUCKET, key)
